@@ -95,8 +95,8 @@ public class Store {
         }
 
         int count = products.size();
-        int countP = (int) products.stream().filter(p -> p instanceof PhysicalProduct).count();
-        int countD = (int) products.stream().filter(p -> p instanceof DigitalProduct).count();
+        int countP = (int) products.stream().filter(p -> p.getTypeCode() == 'P').count();
+        int countD = (int) products.stream().filter(p -> p.getTypeCode() == 'D').count();
 
         Product cheapest = Collections.min(products);
         Product mostExpensive = Collections.max(products);
